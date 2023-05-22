@@ -1,0 +1,39 @@
+.purchase-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 30px;
+  }
+  
+  .purchase-item {
+    width: 300px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .purchase-item img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .purchase-item h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .purchase-item p {
+    margin-bottom: 5px;
+  }
+  
+  .purchase-item button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  

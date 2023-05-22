@@ -1,0 +1,30 @@
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+
+  <mat-form-field>
+    <input matInput formControlName="address" placeholder="Address" required>
+    <mat-error *ngIf="form.controls['address'].invalid && form.controls['address'].touched">
+      Address is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput formControlName="postalCode" placeholder="Postal Code" required>
+    <mat-error *ngIf="form.controls['postalCode'].invalid && form.controls['postalCode'].touched">
+      Postal Code is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput formControlName="cardNumber" placeholder="Card Number" required>
+    <mat-error *ngIf="form.controls['cardNumber'].invalid && form.controls['cardNumber'].touched">
+      Card Number is required
+    </mat-error>
+  </mat-form-field>
+
+  <div class="buttons">
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Submit</button>
+    <!-- <button mat-button color="warn" (click)="onCancel()">Cancel</button> -->
+  </div>
+
+</form>

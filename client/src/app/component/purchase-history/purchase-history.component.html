@@ -1,0 +1,15 @@
+<h1>Purchase History</h1>
+
+<div class="purchase-list" fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between">
+    <div *ngFor="let purchased_product of purchased_products" fxFlex="calc(33% - 20px)">
+      <mat-card class="purchase-item">
+        <img matCardImage [src]="purchased_product.image" alt="Product Image">
+        <mat-card-content>
+          <h2>{{ purchased_product.name }}</h2>
+          <p>{{ purchased_product.description }}</p>
+          <p>{{ purchased_product.category }}</p>
+          <p>Price: Rs {{ purchased_product.price }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>

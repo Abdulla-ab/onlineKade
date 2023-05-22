@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+    <span>Online Kade</span>
+    
+    
+          <button mat-icon-button routerLink="/products">
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+          </button>
+          <ng-container *ngIf="buyerIdAvailable()">
+            <button mat-icon-button routerLink="/cart">
+              <mat-icon>shopping_cart</mat-icon>
+              <span>Cart</span>
+            </button>
+          </ng-container>
+          <ng-container *ngIf="buyerIdAvailable()">
+            <button mat-icon-button routerLink="/purchaseHistory">
+              <mat-icon>history</mat-icon>
+              <span>History</span>
+            </button>
+          </ng-container>
+          <ng-container *ngIf="buyerIdAvailable(); else loginButtonTemplate">
+            <button mat-icon-button (click)="logout()">
+              <mat-icon>logout</mat-icon>
+              <span>Logout</span>
+            </button>
+          </ng-container>
+          
+          <ng-template #loginButtonTemplate>
+            <button mat-icon-button routerLink="/login">
+              <mat-icon>login</mat-icon>
+              <span>Login</span>
+            </button>
+          </ng-template>
+    
+  </mat-toolbar>
+  

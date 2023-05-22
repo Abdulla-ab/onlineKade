@@ -1,0 +1,48 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .register-form {
+    width: 300px;
+    background-color: aquamarine;
+    padding: 20px 40px;
+  }
+  
+  .register-form-field {
+    margin-bottom: 30px;
+    margin-top: 20px;
+    min-height: 20px;
+    display: block;
+  }
+
+  .register-error{
+    color: red;
+    font-size: 12px;
+  }
+
+  .lable{
+    font-size: 12px;
+  }
+
+  .register-input-font{
+    font-size: 12px;
+  }
+  
+  .register-form-title{
+    margin-bottom: 20px;
+  }
+
+  .register-button-form{
+    font-size: 15px;
+    font-weight: bold;
+    background-color: rgb(122, 136, 182);
+    color: black;
+  }
+
+  .register-redirect-link{
+    font-size: 12px;
+    margin-top: 15px;
+  }

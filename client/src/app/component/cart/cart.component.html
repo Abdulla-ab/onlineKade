@@ -1,0 +1,20 @@
+<h1>Cart</h1>
+
+<div class="cart-list" fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between">
+    <div *ngFor="let cart of carts" fxFlex="calc(33% - 20px)">
+      <mat-card class="cart-item">
+        <img matCardImage [src]="cart.image" alt="Cart Image">
+        <mat-card-content>
+          <h2>{{ cart.name }}</h2>
+          <p>{{ cart.description }}</p>
+          <p>{{ cart.category }}</p>
+          <p>Price: Rs {{ cart.price }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  
+  <div class="buy-all-section" *ngIf="getTotalPrice() > 0">
+    <p>Total Price: Rs {{ getTotalPrice() }}</p>
+    <button mat-raised-button color="primary" (click)="openFormDialog(getTotalPrice())">Buy All</button>
+  </div>

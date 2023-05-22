@@ -1,6 +1,5 @@
 package com.example.server.model;
 
-import com.example.server.enums.Category;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -11,30 +10,27 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class PurchaseHistory {
+public class PaymentDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long purchaseHistoryId;
+    private Long paymentId;
 
     @Column(nullable = false)
-    private String name;
+    private String Address;
 
     @Column(nullable = false)
-    private String image;
+    private String PostalCode;
 
     @Column(nullable = false)
-    private String description;
+    private String CardNumber;
 
     @Column(nullable = false)
-    private double price;
+    private Integer totalPayment;
 
-    @Enumerated(EnumType.STRING)
-    private Category category;
-
-    private int quantity;
-
-    @ManyToOne
-    @JoinColumn(name = "buyerId")
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "buyerId", referencedColumnName = "buyerId")
     @JsonBackReference
     private Buyer buyer;
+
+
 }

@@ -1,0 +1,21 @@
+<input type="text" [(ngModel)]="searchText" (input)="filterProducts()" placeholder="Enter text to search" class="search-bar">
+
+
+<div class="product-list" fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between">
+  <div *ngFor="let product of filteredProducts" fxFlex="calc(33% - 20px)">
+    <mat-card class="product-item">
+      <img matCardImage [src]="product.image" alt="Product Image">
+      <mat-card-content>
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        <p>{{ product.category }}</p>
+        <p>Quantity: {{ product.quantity }}</p>
+        <p>Price: Rs {{ product.price }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary" *ngIf="product.quantity > 0 && buyerIdAvailable()" (click)="addToCart(product)">Add to Cart</button>
+        <p *ngIf="product.quantity <= 0" class="sold-out">Sold Out</p>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
